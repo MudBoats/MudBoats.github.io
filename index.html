@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>西高のラスヴェガス</title>
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-color: yellow;
+        }
+
+        #menuIcon {
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+        }
+
+        #closeIcon {
+            display: none;
+            /* 初期状態では非表示 */
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            z-index: 2;
+            /* Xボタンがメニューリンクより前面に来るようにz-indexを追加 */
+        }
+
+        #sideMenu {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -300px;
+            /* 初期状態で非表示にするために右に移動 */
+            width: 300px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 20px;
+            transition: right 0.5s ease;
+            /* 右への移動を0.5秒かけて行う */
+            z-index: 1;
+            /* メニューが背面に来るようにz-indexを追加 */
+        }
+
+        #sideMenu a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .content {
+            margin: 100px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="menuIcon" onclick="toggleMenu()">
+        <span>&#9776;</span>
+    </div>
+    <div id="closeIcon" onclick="toggleMenu()">
+        <span>&times;</span> <!-- Xボタン -->
+    </div>
+    <div id="sideMenu">
+        <a href="page1.html">沿革</a>
+        <a href="page2.html">メンバー</a>
+        <a href="page3.html">お知らせ</a>
+    </div>
+    <div class="content">
+        <h1>西高のラスヴェガスへようこそ！</h1>
+        <p>素晴らしいゲームをご用意しております。ディーラー一同、皆様のご参加を心よりお待ちしております。</p>
+    </div>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("sideMenu");
+            var menuIcon = document.getElementById("menuIcon");
+            var closeIcon = document.getElementById("closeIcon");
+            if (menu.style.display === "none") {
+                menu.style.display = "block";
+                setTimeout(function () {
+                    menu.style.right = "0";
+                }, 10); // メニューを表示する際に右からゆっくりと表示させる
+                menuIcon.style.display = "none";
+                closeIcon.style.display = "block";
+            } else {
+                menu.style.right = "-300px"; // メニューを非表示にする際に右へゆっくりと移動させる
+                setTimeout(function () {
+                    menu.style.display = "none";
+                    menuIcon.style.display = "block";
+                    closeIcon.style.display = "none";
+                }, 500); // 0.5秒後に完全に非表示にする
+            }
+        }
+    </script>
+</body>
+
+</html>
