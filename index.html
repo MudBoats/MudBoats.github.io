@@ -141,6 +141,26 @@
             z-index: 6;
             /* メニューアイコンよりも前面に来るようにz-indexを調整 */
         }
+
+        
+        @media screen and (max-width: 768px) {
+
+            /* スマホで閲覧したときのフォントサイズを調整 */
+            .content,
+            #sideMenu a,
+            header {
+                font-size: 16px;
+            }
+
+            .content {
+                margin-top: 110%;
+            }
+
+            #menuIcon,
+            #closeIcon {
+                font-size: 24px;
+            }
+        }
     </style>
 </head>
 
