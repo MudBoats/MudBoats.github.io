@@ -3,15 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>西高のラスヴェガス</title>
+    <title>沿革</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- スマホ対応のビューポート設定を追加 -->
     <style>
+        @import url('https://fonts.googleapis.com/earlyaccess/hannari.css');
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap');
+
         body {
-            background-size: cover;
-            background-color: yellow;
-            /* 背景色はそのまま */
             background-image: url('./background.png');
-            /* 背景画像のパスを修正 */
+            background-color: yellow;
+            /* 背景画像が読み込まれる前の背景色 */
+            background-size: cover;
+            /* 画像が要素を完全に覆うように */
+            background-position: center;
+            /* 画像の中心が要素の中心に来るように */
+            background-repeat: repeat;
+            /* 画像を繰り返さない */
         }
 
         #menuIcon {
@@ -78,6 +85,8 @@
             margin-right: auto;
             /* 中央揃えのために追加 */
             position: relative;
+            font-size: 24px;
+            font-family: "Hannari", "Zen Kurenaido", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: rgba(255, 255, 255, 0.8);
             /* 本文の背景を白い帯に変更 */
             padding: 20px;
@@ -87,16 +96,18 @@
 
         #titleImage {
             position: absolute;
-            top: 0;
+            top: 5px;
+            /* 画像の下に黒い帯が見えるようにtopを5pxに調整 */
             left: 0;
             width: 100%;
-            height: 80vh;
-            /* title.jpgの高さを60vhに設定して、ページの左右の端まで黒い帯が伸びるように調整 */
+            height: calc(80vh - 5px);
+            /* 高さから5px引いて、黒い帯の分を調整 */
             background-image: url('./title.jpg');
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             background-color: black;
+            /* 背景色を黒に設定して、黒い帯を作成 */
             z-index: 3;
         }
 
@@ -118,8 +129,8 @@
             padding: 20px 0;
             background-color: #f2f2f2;
             color: #333;
-            font-size: 24px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 40px;
+            font-family: "Zen Kurenaido", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: fixed;
             /* 常に表示されるようにpositionをfixedに変更 */
@@ -134,7 +145,7 @@
 </head>
 
 <body>
-    <header>桜高校78回生1年2組</header> <!-- 新しいヘッダを追加 -->
+    <header>兵庫県立姫路西高校78回生1年2組</header> <!-- 新しいヘッダを追加 -->
     <div id="titleImage">
         <!-- title.jpgの全体が表示されるようにstyleを修正し、両側に黒い帯を配置し、title.jpgを前面に表示 -->
     </div> <!-- title.jpgを表示する領域の幅を50%に調整し、背景色をblackに変更して黒い帯を配置し、title.jpgを前面に表示 -->
@@ -151,10 +162,20 @@
         <a href="page3.html">お知らせ</a>
     </div>
     <div class="content">
-        <h1>西高のラスヴェガスへようこそ！</h1>
-        <p>素晴らしいゲームをご用意しております。ディーラー一同、皆様のご参加を心よりお待ちしております。
-            <br>※注意※このページは予告なく変更される可能性があります。
-        </p>
+        <h1>1年2組の沿革</h1>
+        <p>ここでは、2023年4月から2024年3月までの、われらが1年2組が歩んだ軌跡をご紹介いたします。</p>
+        <h2>2023 4月</h2>
+        <h3>78回生総勢280人が入学。</h3>
+        <h2>2023 5月</h2>
+        <h3>野外活動の縄跳びにて、好成績を収める。</h3>
+        <h2>2023 6月</h2>
+        <h3>球技大会にて奮闘。</h3>
+        <h2>2023 7月</h2>
+        <h3>体育大会、フォークダンスを楽しむ。</h3>
+        <h2>2024 1月</h2>
+        <h3>球技大会にて奮闘。</h3>
+        <h2>2024 3月</h2>
+        <h3>第1学年のすべての授業が終了。</h3>
     </div>
     <script>
         function toggleMenu() {
